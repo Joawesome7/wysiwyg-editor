@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rich Text Editor</title>
+  <!-- Include Quill's CSS -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <style>
+    /* Optional: additional custom styles */
+    body { margin: 20px; }
+    #editor-container { height: 200px; }
+  </style>
+</head>
+<body>
+  <!-- Editor Container -->
+  <div id="editor-container">
+    <p>Type your content here...</p>
+  </div>
+
+  <!-- Include Quill's JS -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+    // Initialize the Quill editor
+    var quillEditor = new Quill('#editor-container', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, false] }],
+          ['bold', 'italic', 'underline'],
+          ['image', 'code-block']
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
