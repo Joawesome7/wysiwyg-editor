@@ -37,19 +37,19 @@
       var editorContainer = document.getElementById('editor-container');
       var content = editorContainer ? editorContainer.innerHTML : '';
       window.parent.postMessage({ content: content }, '*'); // Replace '*' with parent's origin if needed for security
-      console.log('Sent content to parent window:', content);
+      
     }
 
     // Send content on initial load
     document.addEventListener("DOMContentLoaded", function() {
       sendEditorContent();
-      console.log("hello world");
+      
     });
 
     // Send content every time the text changes
     quillEditor.on('text-change', function(delta, oldDelta, source) {
       sendEditorContent();
-      console.log("hello world");
+    
     });
   </script>
 </body>
